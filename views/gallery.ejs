@@ -1,0 +1,23 @@
+<% include partial/header %>
+
+	<div class="container">
+		<header class="jumbotron">
+			<h1><i class="fa fa-camera-retro" aria-hidden="true"></i> Photo Gallery</h1>
+			<p>A bunch of beautiful images here!!</p>
+			<a class="btn btn-primary" href="/gallery/new">Add New Photo!</a>
+		</header>
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<% photos.forEach(function(photo){ %>
+		    <div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<img src= <%= photo.image %> >
+					<div><%= photo.author %></div>
+				</div>
+				<p>
+					<a href="/gallery/<%= photo._id %> " class="btn btn-primary">More Info</a>
+				</p>
+			</div>
+		<% }) %>
+		</div>
+	</div>
+<% include partial/footer %>
